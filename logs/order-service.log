@@ -1,0 +1,68 @@
+2026-03-04T10:05:03.056+01:00  INFO 26872 --- [order-service] [main] c.j.ecommerce.order.OrderApplication     : Starting OrderApplication using Java 21.0.8 with PID 26872 (C:\Vlada\MicroservicesEmbarkXKurs\Workspace\ecom-microservices\order\build\classes\java\main started by EQ659NX in C:\Vlada\MicroservicesEmbarkXKurs\Workspace\ecom-microservices)
+2026-03-04T10:05:03.127+01:00  INFO 26872 --- [order-service] [main] c.j.ecommerce.order.OrderApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-03-04T10:05:03.413+01:00  INFO 26872 --- [order-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2026-03-04T10:05:03.415+01:00  INFO 26872 --- [order-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=order-service, profiles=[default], label=null, version=null, state=null
+2026-03-04T10:05:06.318+01:00  INFO 26872 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-04T10:05:06.705+01:00  INFO 26872 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 359 ms. Found 2 JPA repository interfaces.
+2026-03-04T10:05:08.045+01:00  INFO 26872 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ff30e074-0fe1-31f5-b464-9a69d8cd166f
+2026-03-04T10:05:10.611+01:00  INFO 26872 --- [order-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8083 (http)
+2026-03-04T10:05:10.680+01:00  INFO 26872 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-04T10:05:10.693+01:00  INFO 26872 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-04T10:05:11.015+01:00  INFO 26872 --- [order-service] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 7571 ms
+2026-03-04T10:05:11.691+01:00  INFO 26872 --- [order-service] [main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-04T10:05:11.866+01:00  INFO 26872 --- [order-service] [main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-03-04T10:05:13.545+01:00  INFO 26872 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-04T10:05:13.634+01:00  INFO 26872 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-04T10:05:13.954+01:00  INFO 26872 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3dabdd11
+2026-03-04T10:05:13.959+01:00  INFO 26872 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-04T10:05:14.055+01:00  WARN 26872 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-04T10:05:14.116+01:00  INFO 26872 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/order]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: order/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-04T10:05:16.519+01:00  INFO 26872 --- [order-service] [main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-04T10:05:16.715+01:00  INFO 26872 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-04T10:05:17.034+01:00  INFO 26872 --- [order-service] [main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-04T10:05:18.104+01:00  WARN 26872 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-04T10:05:20.713+01:00  INFO 26872 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-03-04T10:05:20.825+01:00  WARN 26872 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-03-04T10:05:20.840+01:00  INFO 26872 --- [order-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-03-04T10:05:20.988+01:00  INFO 26872 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-03-04T10:05:21.046+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-03-04T10:05:21.053+01:00  INFO 26872 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-03-04T10:05:21.067+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-03-04T10:05:21.067+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-03-04T10:05:21.067+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-03-04T10:05:21.068+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-03-04T10:05:21.068+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-03-04T10:05:21.068+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-03-04T10:05:21.068+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-03-04T10:05:21.480+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-03-04T10:05:21.481+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-03-04T10:05:21.483+01:00  INFO 26872 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-03-04T10:05:21.485+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772615121485 with initial instances count: 0
+2026-03-04T10:05:21.489+01:00  INFO 26872 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2026-03-04T10:05:21.491+01:00  INFO 26872 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1772615121491, current=UP, previous=STARTING]
+2026-03-04T10:05:21.494+01:00  INFO 26872 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/XWR9142MB6.ey.net:order-service:8083: registering service...
+2026-03-04T10:05:21.527+01:00  INFO 26872 --- [order-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8083 (http) with context path '/'
+2026-03-04T10:05:21.529+01:00  INFO 26872 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8083
+2026-03-04T10:05:21.556+01:00  INFO 26872 --- [order-service] [main] c.j.ecommerce.order.OrderApplication     : Started OrderApplication in 21.233 seconds (process running for 25.767)
+2026-03-04T10:05:21.566+01:00  INFO 26872 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/XWR9142MB6.ey.net:order-service:8083 - registration status: 204
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-03-04T10:05:51.496+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-03-04T10:05:51.528+01:00  INFO 26872 --- [order-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-03-04T10:10:21.093+01:00  INFO 26872 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-03-04T10:15:21.117+01:00  INFO 26872 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

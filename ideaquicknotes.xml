@@ -1,0 +1,28 @@
+<notes createdt="pet, 13 feb 2026 3:53 PM" selectednoteindex="0" showlinenumbers="N" toolbarlocation="0" fontname="Arial" fontsize="18" wordwrap="Y" fontColorDefault="Y" fontColorRed="0" fontColorGreen="0" fontColorBlue="0" bgColorDefault="Y" bgColorRed="254" bgColorGreen="252" bgColorBlue="219" bgLineColorShow="Y" bgLineColorDefault="Y" bgLineColorRed="234" bgLineColorGreen="233" bgLineColorBlue="164" lineNumberColorDefault="Y" lineNumberColorRed="234" lineNumberColorGreen="233" lineNumberColorBlue="164">
+  <note title="feb 13, 2026 3:53 PM" createdt="pet, 13 feb 2026 3:53 PM">Projekat ecom-microservices
+========================
+Za user microservis:
+1. build.gradle : ubaciti dependency za MongoDB, izbaciti H2 i JPA dependency. - OK
+
+2. application.yml : podesiti vezu sa MongoDB bazom -OK
+
+3. docker-compose.yml: podesiti otvaranje lokalnih kontejnera za MongoDB server i MongoDB Compass, najnovija verzija. 
+NAPOMENA:
+Nije uspelo pravljenje kontejnera sa postojecim konfiguracijama koje sam nasao na internetu. MongoDB kontejner sam pravio i direktno u Docker Desktop-u, tada je komunikacija sa bazom radila normalno, ali je pravljena baza sa imenom "test" umesto userdb kako je setovano u application.yml
+
+4. Promeniti kod unutar controller, model, repository, service paketa kako bi CRUD operacije sa User-om radile u skladu MongoDB dokumentima. -OK
+
+5.  Kada se kontejneri kreiraju, pomocu MongoDB Compass-a otvoriti vezu prema MongoDB serveru i napraviti bazu koje treba nazvati userdb - videti napomenu pod 3. zadatkom
+~~~~~~~~~~~~~~~~~~
+Za order mikroservis:
+1. Preslusati lekcije 63 i 64, napraviti promene u kodu
+~~~~~~~~~~~~~~~~~~
+Za product i order mikroservise:
+1. build.gradle : ubaciti dependency za PostgreSQL, izbaciti H2 dependency. -OK
+
+2. application.yml : podesiti vezu sa PostgreSQL bazom. -OK
+
+3. docker-compose.yml: podesiti otvaranje lokalnih kontejnera za PostgreSQL server i pgadmin, najnovija verzija. -OK
+
+4. Kada se kontejneri kreiraju, pomocu pgadmin-a otvoriti vezu prema PostgreSQL serveru i napraviti 2 baze koje treba nazvati order i product</note>
+</notes>

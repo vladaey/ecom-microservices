@@ -1,0 +1,70 @@
+2026-03-04T10:05:02.997+01:00  INFO 22684 --- [user-service] [main] c.j.ecommerce.user.UserApplication       : Starting UserApplication using Java 21.0.8 with PID 22684 (C:\Vlada\MicroservicesEmbarkXKurs\Workspace\ecom-microservices\user\build\classes\java\main started by EQ659NX in C:\Vlada\MicroservicesEmbarkXKurs\Workspace\ecom-microservices)
+2026-03-04T10:05:03.020+01:00 DEBUG 22684 --- [user-service] [main] c.j.ecommerce.user.UserApplication       : Running with Spring Boot v4.0.2, Spring v7.0.3
+2026-03-04T10:05:03.022+01:00  INFO 22684 --- [user-service] [main] c.j.ecommerce.user.UserApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-04T10:05:03.246+01:00  INFO 22684 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2026-03-04T10:05:03.251+01:00  INFO 22684 --- [user-service] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2026-03-04T10:05:05.682+01:00  INFO 22684 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-03-04T10:05:05.984+01:00  INFO 22684 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 288 ms. Found 1 MongoDB repository interface.
+2026-03-04T10:05:06.872+01:00  INFO 22684 --- [user-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=049bd43c-7b2d-3368-a96c-98f7999c58c7
+2026-03-04T10:05:08.151+01:00  INFO 22684 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8082 (http)
+2026-03-04T10:05:08.338+01:00  INFO 22684 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-04T10:05:08.338+01:00  INFO 22684 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-03-04T10:05:08.780+01:00  INFO 22684 --- [user-service] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 5507 ms
+2026-03-04T10:05:10.917+01:00  INFO 22684 --- [user-service] [cluster-ClusterId{value='69a7f5c66d762546b42d7570', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:85) ~[mongodb-driver-core-5.6.2.jar:na]
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:85) ~[mongodb-driver-core-5.6.2.jar:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233) ~[mongodb-driver-core-5.6.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282) ~[mongodb-driver-core-5.6.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253) ~[mongodb-driver-core-5.6.2.jar:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203) ~[mongodb-driver-core-5.6.2.jar:na]
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76) ~[mongodb-driver-core-5.6.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104) ~[mongodb-driver-core-5.6.2.jar:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79) ~[mongodb-driver-core-5.6.2.jar:na]
+	... 4 common frames omitted
+
+2026-03-04T10:05:10.942+01:00  INFO 22684 --- [user-service] [main] org.mongodb.driver.client                : MongoClient with metadata {"driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/21.0.8+12-LTS-250"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@4552f905], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@646d58cd, com.mongodb.Jep395RecordCodecProvider@388e4c25, com.mongodb.KotlinCodecProvider@12532e37, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@401b67a9], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-03-04T10:05:14.094+01:00  INFO 22684 --- [user-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestClient.
+2026-03-04T10:05:14.179+01:00  WARN 22684 --- [user-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2026-03-04T10:05:14.191+01:00  INFO 22684 --- [user-service] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 17 endpoints beneath base path '/actuator'
+2026-03-04T10:05:14.303+01:00  INFO 22684 --- [user-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2026-03-04T10:05:14.370+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2026-03-04T10:05:14.380+01:00  INFO 22684 --- [user-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-03-04T10:05:14.396+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-03-04T10:05:14.399+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-03-04T10:05:14.399+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-03-04T10:05:14.399+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-03-04T10:05:14.399+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-03-04T10:05:14.399+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2026-03-04T10:05:14.400+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-03-04T10:05:15.225+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-03-04T10:05:15.228+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2026-03-04T10:05:15.232+01:00  INFO 22684 --- [user-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2026-03-04T10:05:15.235+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772615115233 with initial instances count: 0
+2026-03-04T10:05:15.242+01:00  INFO 22684 --- [user-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2026-03-04T10:05:15.243+01:00  INFO 22684 --- [user-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1772615115243, current=UP, previous=STARTING]
+2026-03-04T10:05:15.247+01:00  INFO 22684 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/XWR9142MB6.ey.net:user-service:8082: registering service...
+2026-03-04T10:05:15.286+01:00  INFO 22684 --- [user-service] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8082 (http) with context path '/'
+2026-03-04T10:05:15.288+01:00  INFO 22684 --- [user-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+2026-03-04T10:05:15.333+01:00  INFO 22684 --- [user-service] [main] c.j.ecommerce.user.UserApplication       : Started UserApplication in 15.021 seconds (process running for 19.157)
+2026-03-04T10:05:15.714+01:00  INFO 22684 --- [user-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/XWR9142MB6.ey.net:user-service:8082 - registration status: 204
+2026-03-04T10:05:45.241+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2026-03-04T10:05:45.241+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2026-03-04T10:05:45.241+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2026-03-04T10:05:45.241+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2026-03-04T10:05:45.242+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2026-03-04T10:05:45.242+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2026-03-04T10:05:45.242+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2026-03-04T10:05:45.277+01:00  INFO 22684 --- [user-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2026-03-04T10:10:14.417+01:00  INFO 22684 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-03-04T10:15:14.436+01:00  INFO 22684 --- [user-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-03-04T10:17:41.843+01:00  INFO 22684 --- [user-service] [cluster-ClusterId{value='69a7f5c66d762546b42d7570', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=26989700, minRoundTripTimeNanos=0}
