@@ -5,14 +5,17 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class GatewayConfig {
 
-    //@Bean
+    @Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("product-service", predicateSpec -> predicateSpec
                         .path("/api/products/**")
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec
+                                .circuitBreaker(config -> config.setName("ecomBreaker")
+                                        .setFallbackUri("forward:/fallback/products")))
                         .uri("lb://PRODUCT-SERVICE"))
                 .route("user-service", predicateSpec -> predicateSpec
                         .path("/api/users/**")

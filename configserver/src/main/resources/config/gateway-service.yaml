@@ -1,23 +1,23 @@
-spring:
-  cloud:
-    config:
-      enabled: false
-    gateway:
-      server:
-        webflux:
-          routes:
-            - id: product-service
-              uri: lb://PRODUCT-SERVICE
-              predicates:
-                - Path=/api/products/**
-            - id: user-service
-              uri: lb://USER-SERVICE
-              predicates:
-                - Path=/api/users/**
-            - id: order-service
-              uri: lb://ORDER-SERVICE
-              predicates:
-                - Path=/api/orders/**, /api/cart/**
+#spring:
+#  cloud:
+#    config:
+#      enabled: false
+#    gateway:
+#      server:
+#        webflux:
+#          routes:
+#            - id: product-service
+#              uri: lb://PRODUCT-SERVICE
+#              predicates:
+#                - Path=/api/products/**
+#            - id: user-service
+#              uri: lb://USER-SERVICE
+#              predicates:
+#                - Path=/api/users/**
+#            - id: order-service
+#              uri: lb://ORDER-SERVICE
+#              predicates:
+#                - Path=/api/orders/**, /api/cart/**
 #            - id: eureka-server
 #              uri: http://localhost:8761
 #              predicates:
@@ -31,3 +31,32 @@ spring:
 
 server:
   port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
+
+# Circuit Breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      ecomBreaker:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 10s
+        failureRateThreshold: 50
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        slidingWindowType: count_based

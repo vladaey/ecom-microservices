@@ -7,6 +7,7 @@ import com.jeretin.ecommerce.order.dtos.ProductResponse;
 import com.jeretin.ecommerce.order.dtos.UserDTO;
 import com.jeretin.ecommerce.order.models.CartItem;
 import com.jeretin.ecommerce.order.repositories.CartItemRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,7 @@ public class CartServiceImpl implements CartService {
     private final UserServiceClient userServiceClient;
 
     @Override
+    @CircuitBreaker(name="productService", fallbackMethod = "addToCartFallBack")
     public boolean addToCart(String userId, CartItemRequest cartItemRequest) {
         // 1.Fetch Product according to productId
         // 2. Validate if product exists and if stock quantity less than required one.
@@ -59,6 +61,11 @@ public class CartServiceImpl implements CartService {
         }
         return true;
 
+    }
+
+    public boolean addToCartFallBack(String userId, CartItemRequest cartItemRequest, Exception exception) {
+        exception.printStackTrace();
+        return false;
     }
 
     @Override

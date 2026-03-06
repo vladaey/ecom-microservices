@@ -23,7 +23,8 @@ public class CartController {
             @RequestBody CartItemRequest cartItemRequest
             ) {
         boolean status = cartService.addToCart(userId, cartItemRequest);
-        return status ? ResponseEntity.status(HttpStatus.CREATED).build() : ResponseEntity.badRequest().build();
+        return status ? ResponseEntity.status(HttpStatus.CREATED).build()
+                : ResponseEntity.badRequest().body("Not able to complete the request");
     }
 
     @DeleteMapping("/items/{productId}")
