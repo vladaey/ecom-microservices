@@ -20,6 +20,15 @@ spring:
     username: guest
     password: guest
 
+rabbitmq:
+  exchange:
+    name: order.exchange
+  queue:
+    name: order.queue
+  routing:
+    key: order.tracking
+
+
 server:
   port: 8083
 
