@@ -1,3 +1,4 @@
+/*
 package com.jeretin.demo.consumer;
 
 import org.springframework.kafka.annotation.KafkaListener;
@@ -24,3 +25,4 @@ public class KafkaConsumer {
                 + riderLocation.getLongitude());
     }
 }
+*/
