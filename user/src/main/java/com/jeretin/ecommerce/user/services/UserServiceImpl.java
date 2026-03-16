@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
     private ModelMapper modelMapper;
 
     private final UserRepository userRepository;
+    private final KeyCloakAdminService keyCloakAdminService;
 
     @Override
     public UserResponse getAllUsers() {
@@ -35,8 +36,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addNewUser(UserDTO userDTO) {
+        String token = keyCloakAdminService.getAdminAccessToken();
+        String keycloakUserId = keyCloakAdminService.createUser(token,userDTO);
         User user = modelMapper.map(userDTO, User.class);
-        User savedUser = userRepository.save(user);
+        user.setKeycloakId(keycloakUserId);
+        userRepository.save(user);
 //        return modelMapper.map(savedUser, UserDTO.class);
         /*User user = new User();
         updateUserFromRequest(user, userDTO);
